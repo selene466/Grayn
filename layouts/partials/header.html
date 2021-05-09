@@ -18,9 +18,7 @@
         <li class="h-full ">
           <a href="{{ .Site.BaseURL }}" class="menu-list">Home</a>
         </li>
-        <li class="h-full ">
-          <a href="#" class="menu-list">About</a>
-        </li>
+        <!-- Dropdown unused, make it yours
         <li class="h-full">
           <a href="#" class="menu-list" >
             Dropdown
@@ -29,15 +27,14 @@
             </svg>
           </a>
         </li>
-        <li class="h-full ">
-          <a href="#" class="menu-list">Menu 1</a>
+        -->
+        {{ range where .Site.Pages "Type" "page" }}
+        {{ if ne .Site.Title .LinkTitle }}
+        <li class="h-full">
+          <a class="menu-list {{ if eq ( lower ( substr ( ( substr $.RelPermalink 0 -1 ) ) 1 ) ) ( lower .LinkTitle ) }} active{{ end }}" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
         </li>
-        <li class="h-full ">
-          <a href="#" class="menu-list">Menu 2</a>
-        </li>
-        <li class="h-full ">
-          <a href="#" class="menu-list">Contact</a>
-        </li>
+        {{ end }}
+        {{ end }}
       </ul>
 
       <!-- Switch Mode and Search -->

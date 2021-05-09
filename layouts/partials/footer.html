@@ -3,7 +3,17 @@
   <footer class="bg-gray-500 w-full grid place-items-center">
     <div class="bg-gray-500 lg:bg-gray-600 h-16 md:h-20 w-full lg:w-[85%] flex items-center justify-center text-white">
       <div class="text-center text-sm">
-        <p class="mb-1">Disclaimer - About - Sitemap</p>
+        <p class="mb-1">Disclaimer - About - Sitemap
+              {{ range where .Site.Pages "Type" "page" }}
+                {{ if ne .Site.Title .LinkTitle }}
+                <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
+              {{ end }}
+    {{- range $i, $e := (.GetTerms "tags") -}}
+    {{- if $i -}}, {{ end -}}
+    {{ .LinkTitle }}
+    {{ end }}
+        </p>
         <p>&copy; {{ if eq (now.Format "2006") "2021" }}{{ now.Format "2006" }}{{ else }}2021 - {{ now.Format "2006" }}{{ end }} - {{ .Site.Params.Name }}.<br/><small>Grayn Design By Wibucode</small></p>
       </div>
     </div>
