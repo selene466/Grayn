@@ -93,18 +93,9 @@
 
         <!-- Label List -->
         <div class="flex flex-wrap gap-3">
-          <span class="label-tag">Teknologi</span>
-          <span class="label-tag">Smartphone</span>
-          <span class="label-tag">Komputer</span>
-          <span class="label-tag">Info</span>
-          <span class="label-tag">Software</span>
-          <span class="label-tag">Blogger</span>
-          <span class="label-tag">Programming</span>
-          <span class="label-tag">Hosting</span>
-          <span class="label-tag">Wordpess</span>
-          <span class="label-tag">Hugo</span>
-          <span class="label-tag">Tech</span>
-          <span class="label-tag">WebDevelopment</span>
+        {{ range $.Site.Taxonomies.tags.ByCount }}
+        <a href="{{ $.Site.BaseURL }}tags/{{ .Name | urlize }}" class="label-text{{ if eq ( lower .Name ) ( lower $.Title ) }} active{{ end }}"><span class="label-tag">{{ .Name | humanize }} [{{ .Count }}]</span></a>
+        {{ end }}
         </div>
 
       </section>
