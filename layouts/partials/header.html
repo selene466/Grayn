@@ -1,0 +1,61 @@
+
+  <!-- Navbar -->
+  <header class="fixed lg:relative grid place-items-center top-0 left-0 z-50 bg-gray-500 w-full ">
+    <nav class="bg-gray-600 dark:bg-gray-500 lg:dark:bg-gray-600 lg:bg-gray-600 h-16 md:h-20 w-full lg:w-[85%] flex items-center justify-between text-white px-5 lg:px-12">
+
+      <!-- Togle Menu -->
+      <div class="block md:hidden hover:bg-gray-500 rounded cursor-pointer">
+        <img id="menu-toggle" src="/assets/icons/toggle_menu.svg" class="p-2" alt="toggle menu">
+      </div>
+
+      <!-- Brand Title -->
+      <div>
+        <h1 class="brand-title text-2xl font-bold ml-10 md:ml-0">GRAYN</h1>
+      </div>
+
+      <!-- Menu list -->
+      <ul id="menu-list" class="absolute md:static left-0 top-full hidden opacity-0 md:opacity-100 md:flex flex-col md:flex-row items-center justify-center py-4 md:py-0 cursor-pointer w-full md:h-full bg-gray-500 md:bg-transparent transition duration-300">
+        <li class="h-full ">
+          <a href="{{ .Site.BaseURL }}" class="menu-list">Home</a>
+        </li>
+        <li class="h-full ">
+          <a href="#" class="menu-list">About</a>
+        </li>
+        <li class="h-full">
+          <a href="#" class="menu-list" >
+            Dropdown
+            <svg class="ml-1" width="10" height="5" viewBox="0 0 10 5" fill="none">
+              <path d="M5 5L0.669872 0.5H9.33013L5 5Z" fill="white"/>
+            </svg>
+          </a>
+        </li>
+        <li class="h-full ">
+          <a href="#" class="menu-list">Menu 1</a>
+        </li>
+        <li class="h-full ">
+          <a href="#" class="menu-list">Menu 2</a>
+        </li>
+        <li class="h-full ">
+          <a href="#" class="menu-list">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Switch Mode and Search -->
+      <div class="flex items-center gap-1 md:gap-5">
+        <div id="switchTheme" class="md:hover:bg-gray-500 rounded-full cursor-pointer px-1">
+          <img src="/assets/icons/icon_moon.svg" class="image-switch w-6 h-6 md:w-8 md:h-8" alt="darkmode">
+        </div>
+        <div id="search-button" class="md:hover:bg-gray-500 rounded-full cursor-pointer px-1">
+          <img src="/assets/icons/icon_search.svg" class="w-6 h-6 md:w-8 md:h-8" alt="search">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Search Input -->
+  <section id="search-input" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50">
+    <form class="w-full flex justify-center pt-20 transform -translate-y-full transition-transform duration-300">
+      <input type="text" placeholder="Masukan Kata Kunci" class="search-input">
+    </form>
+  </section>
+

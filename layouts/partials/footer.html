@@ -1,0 +1,20 @@
+
+  <!-- Footer -->
+  <footer class="bg-gray-500 w-full grid place-items-center">
+    <div class="bg-gray-500 lg:bg-gray-600 h-16 md:h-20 w-full lg:w-[85%] flex items-center justify-center text-white">
+      <div class="text-center text-sm">
+        <p class="mb-1">Disclaimer - About - Sitemap</p>
+        <p>&copy; {{ if eq (now.Format "2006") "2021" }}{{ now.Format "2006" }}{{ else }}2021 - {{ now.Format "2006" }}{{ end }} - {{ .Site.Params.Name }}.<br/><small>Grayn Design By Wibucode</small></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- To Top Button -->
+  <div id="to-top" class="fixed bottom-full right-5 w-14 h-14 rounded-full bg-gray-500 dark:bg-gray-700 md:dark:bg-gray-500 grid place-items-center text-white cursor-pointer transition-all duration-700">
+    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 0L12.9952 11.25H0.00480938L6.5 0Z" fill="white"/>
+    </svg>  
+  </div>
+
+  <script src="/js/main.js"></script>
+

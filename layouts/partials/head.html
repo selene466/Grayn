@@ -1,0 +1,21 @@
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:locale" content="{{ .Site.Params.Locale }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{ if ne .Title .Site.Title }}{{ .Title | emojify }}{{ else }}{{ .Site.Title }}{{ end }}" />
+  <meta property="og:description" content="{{ .Site.Params.Description }}" />
+	<meta property="og:url" content="{{ .Site.BaseURL }}{{ substr .RelPermalink 1  }}" />
+  <meta property="og:site_name" content="{{ .Site.Params.Name }}" />
+	<meta name="twitter:card" content="{{ with .Summary }}{{ . | emojify }}{{ end }}{{ with .Site.Params.Description }} {{ . }}{{ end }}" />
+  <title>
+    {{- if eq .RelPermalink "/" -}}
+      {{- .Site.Params.siteName -}}
+    {{ else }}
+      {{- .Title | humanize }} | {{ .Site.Params.siteName -}}
+    {{- end -}}
+  </title>
+  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/styles.css">
+
