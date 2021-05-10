@@ -10,10 +10,10 @@
   <meta property="og:site_name" content="{{ .Site.Params.Name }}" />
 	<meta name="twitter:card" content="{{ with .Summary }}{{ . | emojify }}{{ end }}{{ with .Site.Params.Description }} {{ . }}{{ end }}" />
   <title>
-    {{- if eq .RelPermalink "/" -}}
-      {{- .Site.Params.siteName -}}
+    {{- if eq .Kind "home" -}}
+      {{- .Site.Params.Name -}}
     {{ else }}
-      {{- .Title | humanize }} | {{ .Site.Params.siteName -}}
+      {{- .Title | humanize }} | {{ .Site.Params.Name -}}
     {{- end -}}
   </title>
   <link rel="stylesheet" href="/css/tailwind.css">

@@ -11,35 +11,15 @@
           Heading Article Lorem Inspun  Jamet Gans Baget Weabu
         </h1>
         <small>
-          By Andre Rio . April 28,2021 . 15:24
+          By {{ .Params.author }}. {{ .Date.Format "January 2, 2006 - 15:04" }}
         </small>
 
-        <img src="./assets/images/img_article2.png" class="w-full my-8" alt="image article">
+        <img src="/assets/images/img_article2.png" class="w-full my-8" alt="image article">
 
         <p class="my-4 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam a dui sociis sodales libero justo. Egestas scelerisque morbi in platea. Mattis tortor quis sit eu.
-        </p>
-        <p class="my-4 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor nisl tempus malesuada urna, phasellus viverra lacus imperdiet sit. Nunc at sed consequat tortor est massa iaculis varius feugiat. Nullam sapien fames vitae sed mauris commodo gravida a. Purus vitae, eget at est sed. Arcu porta nulla nullam commodo sit consequat et.
-        </p>
-        <p class="my-4 text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eos consequuntur possimus voluptatibus cum error! Laboriosam reiciendis quos dolorum saepe animi accusamus, non incidunt commodi sapiente id enim quam molestias!
+          {{ replace .Content "<p></p>" "" | safeHTML }}
         </p>
 
-        <div class="border-l-[6px] border-gray-600 dark:border-white w-10/12 bg-gray-50 dark:bg-gray-500 px-4 py-2">
-          <h1 class="text-lg font-bold inline-block">Baca juga: </h1>
-          <a href="#" class="text-lightblue-500 font-semibold text-lg hover:underline">Lorem Inspun Tutorial</a> <br/>
-          <a href="#" class="text-lightblue-500 font-semibold text-lg hover:underline">Jamet Asmet Weabu</a> <br/>
-        </div>
-
-        <p class="my-4 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam a dui sociis sodales libero justo. Egestas scelerisque morbi in platea. Mattis tortor quis sit eu t tortor est massa iaculis varius feugiat. Nullam sapien fames vitae sed mauris...
-        </p>
-        <p class="my-4 text-lg">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe laborum, facere nisi expedita facilis voluptates neque modi magni provident quia perspiciatis? Enim, doloribus expedita consequuntur earum dolorum minima cupiditate veritatis culpa est perspiciatis ducimus optio rerum libero dolore suscipit quia minus? Nisi beatae, consectetur unde sit eligendi ullam quisquam harum magnam nulla at, illum ipsa incidunt temporibus repellat aperiam corporis officiis reiciendis rerum qui nihil deserunt totam ducimus fuga aut? Veniam officia, pariatur vel quo asperiores blanditiis iure ex facilis dolores nisi dolorum ab mollitia accusamus, hic praesentium dolore consequuntur. Reiciendis dolores expedita architecto provident numquam fugiat officia repellat veniam.
-        </p>
-
-        <p class="my-4 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum labore ipsum cumque aspernatur perspiciatis a eveniet itaque aliquam commodi sit.</p>
       </article>
 
       <!-- Bagikan -->
@@ -50,25 +30,21 @@
           </div>
         </div>
         <div class="flex items-center gap-3 flex-wrap">
-          <a href="#" class="flex items-center px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
-            <img src="./assets/icons/icon_facebook.svg" alt="facebook icon">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Site.BaseURL }}{{ substr .RelPermalink 1 }}" class="flex items-center px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
+            <img src="/assets/icons/icon_facebook.svg" alt="facebook icon">
             <p class="ml-1  font-semibold">Facebook</p>
           </a>
-          <a href="#" class="flex items-center px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
-            <img src="./assets/icons/icon_twitter.svg" alt="facebook icon">
+          <a href="https://twitter.com/intent/tweet?url={{ .Site.BaseURL }}{{ substr .RelPermalink 1 }}&text={{ .Title }}" class="flex items-center px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
+            <img src="/assets/icons/icon_twitter.svg" alt="facebook icon">
             <p class="ml-1  font-semibold">Twitter</p>
           </a>
-          <a href="#" class="flex items-center px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
-            <img src="./assets/icons/icon_whatsapp.svg" alt="facebook icon">
+          <a href="whatsapp://send?text={{ .Site.BaseURL }}{{ substr .RelPermalink 1 }}" class="flex items-center px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
+            <img src="/assets/icons/icon_whatsapp.svg" alt="facebook icon">
             <p class="ml-1  font-semibold">Whatsapp</p>
           </a>
-          <a href="#" class="flex items-center px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
-            <img src="./assets/icons/icon_telegram.svg" alt="facebook icon">
+          <a href="https://t.me/share/url?url={{ .Site.BaseURL }}{{ substr .RelPermalink 1 }}" class="flex items-center px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
+            <img src="/assets/icons/icon_telegram.svg" alt="facebook icon">
             <p class="ml-1  font-semibold">Telegram</p>
-          </a>
-          <a href="#" class="flex items-center px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
-            <img src="./assets/icons/icon_pinterest.svg" alt="facebook icon">
-            <p class="ml-1  font-semibold">Pinterest</p>
           </a>
         </div>
       </section>
@@ -82,19 +58,19 @@
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
           <a href="#" class="mb-5">
-            <img src="./assets/images/img_article1.png" class="w-full h-4/5" alt="image article">
+            <img src="/assets/images/img_article1.png" class="w-full h-4/5" alt="image article">
             <p class="text-xs h-2/5 py-2 font-bold hover:underline">Lorem Jamet Kamet Ngepet Gans Roni Kuli Tekno</p>
           </a>
           <a href="#" class="mb-5">
-            <img src="./assets/images/img_article3.png" class="w-full h-4/5" alt="image article">
+            <img src="/assets/images/img_article3.png" class="w-full h-4/5" alt="image article">
             <p class="text-xs h-2/5 py-2 font-bold hover:underline">Lorem Jamet Kamet Ngepet Gans Roni Kuli Tekno</p>
           </a>
           <a href="#" class="mb-5">
-            <img src="./assets/images/img_article4.png" class="w-full h-4/5" alt="image article">
+            <img src="/assets/images/img_article4.png" class="w-full h-4/5" alt="image article">
             <p class="text-xs h-2/5 py-2 font-bold hover:underline">Lorem Jamet Kamet Ngepet Gans Roni Kuli Tekno</p>
           </a>
           <a href="#" class="mb-5">
-            <img src="./assets/images/img_article5.png" class="w-full h-4/5" alt="image article">
+            <img src="/assets/images/img_article5.png" class="w-full h-4/5" alt="image article">
             <p class="text-xs h-2/5 py-2 font-bold hover:underline">Lorem Jamet Kamet Ngepet Gans Roni Kuli Tekno</p>
           </a>
         </div>
